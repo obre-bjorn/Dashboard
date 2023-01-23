@@ -8,12 +8,18 @@ ul {
     list-style: none;
 }
 
+// Mixins
+@mixin center {
+    display: flex;
+    align-items: center;
+}
+
 .container {
     width: 100vw;
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr repeat(2, 2fr) 1fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 150px 1fr;
     font-family: 'Roboto';
     .sidebar {
         background-color: #1e293b;
@@ -27,31 +33,69 @@ ul {
         .logo {
             width: 100%;
             height: 20px;
-            display: flex;
-            align-items: center;
+            @include center();
             font-size: 1.5rem;
             gap: 5px;
+            padding-right: 20px;
         }
-        .menu {
+        padding-top: 1rem;
+        ul {
             padding-top: 1rem;
-            ul {
-                padding-top: 1rem;
-                li {
-                    padding: .5rem;
-                    display: flex;
-                    align-items: center;
-                    gap: 15px;
-                }
+            li {
+                padding: .5rem;
+                display: flex;
+                align-items: center;
+                gap: 15px;
             }
         }
     }
-    .header {
-        background-color: pink;
-        grid-column: 2 / 5;
-        grid-row: 1 / 2;
+}
+
+.header {
+    background-color: pink;
+    grid-column: 2 / 5;
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    .header-1 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        // background-color: brown;
+        align-items: center;
+        padding: 10px;
+        padding-left: 40px;
+        .search {
+            @include center();
+            gap: 5px;
+            input[type="search"] {
+                width: 90%;
+                height: 2rem;
+                border-radius: 2rem;
+                outline: none;
+                border: none;
+                padding: 10px 20px;
+            }
+        }
+        .header-info {
+            @include center();
+            justify-content: center;
+            gap: 20px;
+            .info-prof-pic {
+                width: 40px;
+                border-radius: 50%;
+            }
+            .info-username {
+                font-size: 1.2rem;
+                font-weight: 550;
+            }
+        }
     }
-    .main-content {
-        background-color: green;
-        grid-column: 2 / 5;
+    .header-2 {
+        background-color: yellow;
     }
+}
+
+.main-content {
+    background-color: green;
+    grid-column: 2 / 5;
 }
