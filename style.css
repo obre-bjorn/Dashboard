@@ -88,7 +88,42 @@ ul {
   font-weight: 550;
 }
 .header .header-2 {
-  background-color: yellow;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: center;
+  padding-left: 40px;
+}
+.header .header-2 .user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header .header-2 .user .info-prof-pic {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.header .header-2 .user .username-info .greeting {
+  font-size: 0.8rem;
+}
+.header .header-2 .user .username-info .username {
+  font-size: 1.3rem;
+}
+.header .header-2 .controls {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+  padding-right: 5rem;
+}
+.header .header-2 .controls .control {
+  background-color: red;
+  color: white;
+  width: 5rem;
+  height: 2.5rem;
+  padding: 5px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
 }
 
 .main-content {
